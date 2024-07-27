@@ -8,8 +8,7 @@ The observation is "interpolation of $N$ data points into a polynomial of degree
 
 To find coefficients of $fg(X)$ one can perform inverse transform as $FFT^{-1}(FFT(f) \odot FFT(g))$. To understand why inverse transformation results in coefficients (i.e. is equivalent to interpolation) one may view FFT transform as matrix multiplication:
 
-$$
-\begin{matrix}
+$$\begin{matrix}
 1 & 1 & 1 & ... & 1 \\
 \omega_{2n} & \omega_{2n} & \omega_{2n} & ... & \omega_{2n} \\
 \omega_{2n}^2 & \omega_{2n}^2 & \omega_{2n}^2 & ... & \omega_{2n}^2 \\
@@ -31,8 +30,7 @@ a_{2n-1}
 \hat{a_2} \\
 \vdots \\
 \hat{a_{2n-1}} \\
-\end{matrix}
-$$
+\end{matrix}$$
 
 where $\omega_{2N}$ is $2N^{th}$ root of unity, $a_0, a_1,...a_{2n-1}$ are coefficients of polynomial $fg(X)$ and resulting column vector contains $fg(\omega_{2N}^k)$ at row $k$.
 
@@ -42,8 +40,7 @@ Due to "Inversion theorem":
 $$M(\omega_{2N})^{-1} = \frac{1}{n}M(\omega_{2N}^{-1})$$
 Thus to calculate the coefficients one may calculate:
 
-$$
-\begin{matrix}
+$$\begin{matrix}
 1 & 1 & 1 & ... & 1 \\
 \omega_{2n}^{-1} & \omega_{2n}^{-1} & \omega_{2n}^{-1} & ... & \omega_{2n}^{-1} \\
 \omega_{2n}^{-2} & \omega_{2n}^{-2} & \omega_{2n}^{-2} & ... & \omega_{2n}^{-2} \\
@@ -65,8 +62,7 @@ a_1 \\
 a_2 \\
 \vdots \\
 a_{2n-1}
-\end{matrix}
-$$
+\end{matrix}$$
 
 The structure above corresponds to FFT transformation on vector $FFT(f) \odot FFT(g)$ with $\omega_{2n}^{-1}$ instead of $\omega_{2n}$. Thus one can find the coefficients of resulting polynomial by evaluating $FFT^{-1}(FFT(f) \odot FFT(g))$ where $FFT^{-1}$ is FFT algorithm with $\omega_{2n}^{-1}$.
 
