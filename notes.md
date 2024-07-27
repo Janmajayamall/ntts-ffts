@@ -22,8 +22,7 @@ a_1 \\
 a_2 \\
 \vdots \\
 a_{2n-1}
-\end{matrix}
-=
+\end{matrix} =
 \begin{matrix}
 \hat{a_0} \\
 \hat{a_1} \\
@@ -54,8 +53,7 @@ $$\begin{matrix}
 \hat{a_2} \\
 \vdots \\
 \hat{a_{2n-1}} \\
-\end{matrix}
-=
+\end{matrix} =
 \begin{matrix}
 a_0 \\
 a_1 \\
